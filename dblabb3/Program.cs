@@ -6,6 +6,8 @@ namespace dblabb3
     {
         static void Main(string[] args)
         {
+            DbManager dbManager = new DbManager(DbManager.DbType.MongoDb);
+            dbManager.db.
             Console.WriteLine("Hello World!");
         }
     }

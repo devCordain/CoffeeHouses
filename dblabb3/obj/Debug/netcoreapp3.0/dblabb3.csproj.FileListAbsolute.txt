@@ -1,0 +1,4 @@
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\dblabb3.exe
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\obj\Debug\netcoreapp3.0\dblabb3.csprojAssemblyReference.cache
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\obj\Debug\netcoreapp3.0\dblabb3.AssemblyInfoInputs.cache
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\obj\Debug\netcoreapp3.0\dblabb3.AssemblyInfo.cs
