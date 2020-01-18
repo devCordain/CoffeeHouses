@@ -7,7 +7,7 @@ namespace dblabb3
     {
         static void Main(string[] args)
         {
-            DbManager dbManager = new DbManager(DbManager.DbType.MongoDb);
+            MongoDBManager dbManager = new MongoDBManager(MongoDBManager.DbType.MongoDb);
             dbManager.ConnectToServer();
             var db = dbManager.GetCurrentDb<IMongoDatabase>();
             dbManager.SetDatabase("dblabb3");
