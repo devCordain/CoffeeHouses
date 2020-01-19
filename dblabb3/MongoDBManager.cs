@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 
 namespace dblabb3
@@ -8,8 +9,9 @@ namespace dblabb3
     public class MongoDBManager
     {
         //Fields for MongoDB
-        private IMongoDatabase db { get; set; }
+        private IMongoDatabase db;
         private MongoClient mongoClient;
+        private IMongoCollection<BsonDocument> restaurants;
 
         //Insert fields for other databases
 
@@ -19,34 +21,64 @@ namespace dblabb3
             urlBuilder.Server = new MongoServerAddress("localhost", 27017);
             urlBuilder.Scheme = MongoDB.Driver.Core.Configuration.ConnectionStringScheme.MongoDB;
             mongoClient = new MongoClient(urlBuilder.ToMongoUrl());
-            SetDb("labb3");
-            SetCollection("restaurants");
+            db = mongoClient.GetDatabase("labb3");
+            restaurants = db.GetCollection<BsonDocument>("restaurants");
         }
 
-
-        private void SetDb(string databaseName)
-        {
-            db = mongoClient.GetDatabase(databaseName);
-        }
-        
-        private void SeedDb()
+        public void SeedDb()
         {
             List<Restaurant> seedData = new List<Restaurant>
             {
-                new Restaurant("5c39f9b5df831369c19b6bca", "Sun Bakery Trattoria", 4, new string[] { "Pizza", "Pasta", "Italian", "Coffee", "Sandwiches"}),
-                new Restaurant("5c39f9b5df831369c19b6bcb", "Blue Bagels Grill", 4, new string[] { "Pizza", "Pasta", "Italian", "Coffee", "Sandwiches"}),
-                new Restaurant("5c39f9b5df831369c19b6bca", "Sun Bakery Trattoria", 4, new string[] { "Pizza", "Pasta", "Italian", "Coffee", "Sandwiches"}),
-                new Restaurant("5c39f9b5df831369c19b6bca", "Sun Bakery Trattoria", 4, new string[] { "Pizza", "Pasta", "Italian", "Coffee", "Sandwiches"}),
-                new Restaurant("5c39f9b5df831369c19b6bca", "Sun Bakery Trattoria", 4, new string[] { "Pizza", "Pasta", "Italian", "Coffee", "Sandwiches"}),
-                "{ '_id' : ObjectId(''), 'name' : '', 'stars' : 3,  'categories' : [ 'Bagels', 'Cookies', 'Sandwiches' ] }",
-                "{ '_id' : ObjectId('5c39f9b5df831369c19b6bcc'), 'name' : 'Hot Bakery Cafe', 'stars' : 4, 'categories' : [ 'Bakery', 'Cafe', 'Coffee', 'Dessert' ] }",
-                "{ '_id' : ObjectId('5c39f9b5df831369c19b6bcd'), 'name' : 'XYZ Coffee Bar', 'stars' : 5, 'categories' : [ 'Coffee', 'Cafe', 'Bakery', 'Chocolates' ] }",
-                "{ '_id' : ObjectId('5c39f9b5df831369c19b6bce'), 'name' : '456 Cookies Shop', 'stars' : 4, 'categories' : [ 'Bakery', 'Cookies', 'Cake', 'Coffee' ] }"
+                new Restaurant
+                {
+                    Id =  new ObjectId("5c39f9b5df831369c19b6bca"),
+                    Name = "Sun Bakery Trattoria",
+                    Stars = 4,
+                    Categories = new string[] { "Pizza", "Pasta", "Italian", "Coffee", "Sandwiches"}
+                },
+                new Restaurant
+                {
+                    Id =  new ObjectId("5c39f9b5df831369c19b6bcb"),
+                    Name = "Blue Bagels Grill",
+                    Stars = 3,
+                    Categories = new string[] { "Bagels", "Cookies", "Sandwiches" }
+                },
+                new Restaurant
+                {
+                    Id =  new ObjectId("5c39f9b5df831369c19b6bcc"),
+                    Name = "Hot Bakery Cafe",
+                    Stars = 4,
+                    Categories = new string[] { "Bakery", "Cafe", "Coffee", "Dessert" }
+                },
+                new Restaurant
+                {
+                    Id =  new ObjectId("5c39f9b5df831369c19b6bcd"),
+                    Name = "XYZ Coffee Bar",
+                    Stars = 5,
+                    Categories = new string[] { "Coffee", "Cafe", "Bakery", "Chocolates" }
+                },
+                new Restaurant
+                {
+                    Id =  new ObjectId("5c39f9b5df831369c19b6bce"),
+                    Name = "456 Cookies Shop",
+                    Stars = 4,
+                    Categories = new string[] { "Bakery", "Cookies", "Cake", "Coffee" }
+                }
             };
 
-            IMongoCollection<Restaurant> restaurants = db.GetCollection<Restaurant>("restaurants");
+            foreach (var item in seedData)
+            {
+                restaurants.InsertOne(item.ToBsonDocument());
+            }
+        }
 
-            restaurants.InsertMany(seedData);
+        public void PrintAllDocuments()
+        {
+            var allBsonRestaurants = restaurants.Find(new BsonDocument()).ToList();
+            foreach (var bsonRestaurant in allBsonRestaurants)
+            {
+                Console.WriteLine(BsonSerializer.Deserialize<Restaurant>(bsonRestaurant).ToString());
+            }
         }
     }
 }

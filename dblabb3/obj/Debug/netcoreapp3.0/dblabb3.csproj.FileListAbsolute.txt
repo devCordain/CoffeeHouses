@@ -2,3 +2,17 @@ C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\dbl
 C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\obj\Debug\netcoreapp3.0\dblabb3.csprojAssemblyReference.cache
 C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\obj\Debug\netcoreapp3.0\dblabb3.AssemblyInfoInputs.cache
 C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\obj\Debug\netcoreapp3.0\dblabb3.AssemblyInfo.cs
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\dblabb3.deps.json
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\dblabb3.runtimeconfig.json
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\dblabb3.runtimeconfig.dev.json
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\dblabb3.dll
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\dblabb3.pdb
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\DnsClient.dll
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\MongoDB.Bson.dll
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\MongoDB.Driver.dll
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\MongoDB.Driver.Core.dll
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\MongoDB.Libmongocrypt.dll
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\bin\Debug\netcoreapp3.0\SharpCompress.dll
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\obj\Debug\netcoreapp3.0\dblabb3.csproj.CopyComplete
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\obj\Debug\netcoreapp3.0\dblabb3.dll
+C:\Users\Tommy Karlsson\source\repos\dblabb3\dblabb3\obj\Debug\netcoreapp3.0\dblabb3.pdb
