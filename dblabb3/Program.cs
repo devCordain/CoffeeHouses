@@ -9,7 +9,13 @@ namespace dblabb3
         {
             MongoDBManager dbManager = new MongoDBManager();
             //dbManager.SeedDb();
-            dbManager.PrintAllDocuments();
+            //dbManager.PrintAllDocuments();
+            //dbManager.PrintAllDocumentNamesInCategory("Cafe");
+            //dbManager.UpdateStars("XYZ Coffee Bar", 2);
+            //dbManager.UpdateName("XYZ Coffee Bar", "Bara bar baren");
+            //dbManager.UpdateName("Bara bar baren", "XYZ Coffee Bar");
+            //dbManager.TopRestaurants(4);
         }
     }
 }
+
