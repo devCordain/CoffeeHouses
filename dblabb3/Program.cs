@@ -8,6 +8,9 @@ namespace dblabb3
         static void Main(string[] args)
         {
             MongoDBManager dbManager = new MongoDBManager();
+
+
+            //Nedan är metodanropen med invariabler som jag gör för att klara uppgifterna i labben.
             //dbManager.SeedDb();
             //dbManager.PrintAllDocuments();
             //dbManager.PrintAllDocumentNamesInCategory("Cafe");
